@@ -1,0 +1,144 @@
+:root{
+    --width-cell: calc(100%/15);
+}
+
+
+
+
+.clue-top {
+    grid-area: ctop;
+}
+
+.clue-left {
+    grid-area: cleft;
+}
+
+.fild {
+    grid-area: fild;
+}
+
+.container-sv {
+    min-width: 100%;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas:
+    '.    ctop ctop'
+    'cleft fild fild';
+}
+
+.fild {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fild *{
+    width: var(--width-cell);
+    height: auto;
+    aspect-ratio: 1/1;
+    border: 1px solid #8a8989;
+    min-height: 23px;
+}
+
+.border-right {
+    border-right: 2px solid #464242;
+}
+
+.border-top {
+    border-top: 2px solid #464242!important;
+}
+
+.clue-top {
+    
+    height: fit-content;
+    display: flex;
+
+    align-self: flex-end;
+}
+
+.clue-left {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.clue-left *{
+    width: calc(100%/8);
+    
+    aspect-ratio: 1/1;
+    border: 1px solid #8a8989;
+}
+
+.wrapper-top {
+    width: var(--width-cell);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.wrapper-top *{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 1px solid #8a8989;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-left {
+    width: 100%;
+    height: calc(100%/15);
+    display: flex;
+    justify-content: flex-end;
+    aspect-ratio: auto;
+    border: 0px;
+
+}
+
+
+.wrapper-left  *{
+    width: calc(var(--width-cell));
+    
+    aspect-ratio: unset;
+    border: 1px solid #8a8989;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transparent-zero {
+    color: transparent;
+}
+
+@media  screen and (width < 768px) {
+    .wrapper-left * {
+        width: calc(var(--width-cell));
+        /*height: fit-content;*/
+        
+        font-size: 14px;
+        font-weight: 500;
+        aspect-ratio: unset;
+    }
+    .wrapper-top * {
+        height: auto;
+        aspect-ratio: 1/1;
+      
+        /*width: 23px;*/
+    }
+
+    .fild *{
+        /*width: var(--width-cell);*/
+        /*width: auto;*/
+        aspect-ratio: 1/1;
+      
+        /*height: 23px;*/
+    }
+}
