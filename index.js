@@ -106,7 +106,7 @@ let array = [
     cluesTop =cluesTop.map(function(el){
         let lengthElement = el.length;
         for(let i=0; i < (maxLengthTop - lengthElement ); i++){
-            el.unshift("");
+            el.unshift("0");
             
         }
       
