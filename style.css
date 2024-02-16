@@ -2,8 +2,17 @@
     --width-cell: calc(100%/15);
 }
 
+* {
+    box-sizing: border-box;
+}
 
-
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .clue-top {
     grid-area: ctop;
@@ -18,19 +27,20 @@
 }
 
 .container-sv {
-    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
     padding: 0px;
     display: grid;
-    grid-template-columns: 40% 60%;
-    grid-template-rows: 1fr 2fr;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
     grid-template-areas:
-    '.    ctop ctop'
-    'cleft fild fild';
+    '.      ctop'
+    'cleft  fild';
 }
 
 .fild {
     width: 100%;
-    height: fit-content;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -116,6 +126,16 @@
 
 .transparent-zero {
     color: transparent;
+}
+
+@media  screen and (width >= 1000px) {
+    .container-sv{
+        width: 992px;
+
+    }
+    .wrapper-top * {
+        width: 100%;
+    }
 }
 
 @media  screen and (width < 768px) {
